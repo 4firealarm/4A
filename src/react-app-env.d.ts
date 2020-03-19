@@ -7,6 +7,9 @@ declare namespace NodeJS {
     readonly NODE_ENV: 'development' | 'production' | 'test';
     readonly PUBLIC_URL: string;
   }
+  interface Global {
+    $api: any;
+  }
 }
 
 declare module '*.bmp' {
@@ -61,6 +64,11 @@ declare module '*.module.scss' {
 }
 
 declare module '*.module.sass' {
+  const classes: { readonly [key: string]: string };
+  export default classes;
+}
+
+declare module '*.module.less' {
   const classes: { readonly [key: string]: string };
   export default classes;
 }

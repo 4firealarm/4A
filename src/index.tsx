@@ -2,10 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.less';
 import App from './App';
+import Global from './libs/global'
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter, Route} from "react-router-dom";
 
-// ReactDOM.render(<App />, document.getElementById('root'));
+global.$api = Global.Api
+
 ReactDOM.render(
   <BrowserRouter>
     <Route path='/' component={App}></Route>
